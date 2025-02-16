@@ -1,8 +1,17 @@
 ## 🌐 IP Geolocation Logger
-A Lua/Luau script that logs every IP geolocation data needed to determine a location through a Discord WebHook by executing it in an executor.
+A Luau script that logs every IP geolocation data needed to determine a location through a Discord WebHook by executing it in a Roblox executor.
 
-## 🎮 Supported Games
-1. [Roblox](https://roblox.com/)
+## 🖼️ Showcase
+![](https://i.ibb.co.com/6R0syD5k/20250216-171337.jpg)
+
+## ⚙️ Configuration
+You can configure the script using this.
+```lua
+getgenv().WebHook_URL = 'Your_WebHook_URL'
+```
+
+## ✅ Verified Executors
+1. [Delta](https://deltaexploits.gg/)
 
 ## 📝 Note
-This script does not support any actions that violate the terms of service and was created for educational purposes to demonstrate how geolocation data can be retrieved from an IP address. Please report any issues to @mcantcode on Discord.
+This script doesn't support any actions that violate Roblox's Terms of Service and was made for educational purposes, showing how to retrieve geolocation data from an IP address.
