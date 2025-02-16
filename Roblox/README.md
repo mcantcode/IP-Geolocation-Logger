@@ -1,5 +1,5 @@
 ## 🖼️ Showcase
-![](https://i.ibb.co.com/gMZgrtCx/20250216-171337.jpg)
+![](https://i.ibb.co.com/6R0syD5k/20250216-171337.jpg)
 
 ## ⚙️ Configuration
 You can configure the script using this.
