@@ -14,4 +14,4 @@ getgenv().WebHook_URL = 'Your_WebHook_URL'
 1. [Delta](https://deltaexploits.gg/)
 
 ## 📝 Note
-This script doesn't support any actions that violate Roblox's Terms of Service and was made for educational purposes, showing how to retrieve geolocation data from an IP address.
+This script doesn't support any actions that violate Roblox's Terms of Service and was made for educational purposes, showing how to collect geolocation data from an IP address.
