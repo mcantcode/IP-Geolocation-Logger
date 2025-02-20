@@ -7,7 +7,7 @@ An open-source Luau script that logs IP geolocation data and sends it to a Disco
 ## ⚙️ Configuration
 You can configure the script using this.
 ```lua
-getgenv().WebHook_URL = 'Your_Webhook_URL'
+getgenv().Webhook_URL = 'Your_Discord_Webhook_URL'
 ```
 
 ## ✅ Verified Executors
