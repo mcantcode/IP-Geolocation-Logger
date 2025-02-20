@@ -1,8 +1,8 @@
 ## 🌐 IP Geolocation Logger
-A Luau script that logs every IP geolocation data needed to determine a location through a Discord WebHook by executing it in a Roblox executor.
+An open-source Luau script that logs IP geolocation data and sends it to a Discord Webhook through a Roblox executor.
 
 ## 🖼️ Showcase
-![](https://i.ibb.co.com/6R0syD5k/20250216-171337.jpg)
+![](https://i.ibb.co.com/Mybs2cPL/Screenshot-2025-02-20-19-10-22-932-edit-com-discord.jpg)
 
 ## ⚙️ Configuration
 You can configure the script using this.
