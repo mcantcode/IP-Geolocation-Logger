@@ -10,8 +10,5 @@ You can configure the script using this.
 getgenv().Webhook_URL = 'Your_Discord_Webhook_URL'
 ```
 
-## ✅ Verified Executors
-1. [Delta](https://deltaexploits.gg/)
-
 ## 📝 Note
 This script doesn't support any actions that violate Roblox's Terms of Service and was made for educational purposes, showing how to collect geolocation data from an IP address.
