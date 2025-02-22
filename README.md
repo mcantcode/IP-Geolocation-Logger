@@ -7,7 +7,7 @@ An open-source Luau script that logs geolocation data from an [IP geolocation AP
 ## ⚙️ Configuration
 You can configure the script using the following code:
 ```lua
-getgenv().Webhook_URL = 'Your_Discord_Webhook_URL'
+getgenv().Webhook_URL = "Your_Discord_Webhook_URL"
 ```
 
 ## 📝 Notes
