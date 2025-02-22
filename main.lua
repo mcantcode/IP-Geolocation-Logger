@@ -1,4 +1,4 @@
--- Credits to @mcantcode on Discord
+-- Credits to @mcantcode on Discord.
 local players = game:GetService("Players")
 local httpService = game:GetService("HttpService")
 
