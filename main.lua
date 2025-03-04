@@ -1,8 +1,7 @@
 -- Credits to @mcantcode on Discord.
-local players = game:GetService("Players")
 local httpService = game:GetService("HttpService")
 
-local localPlayer = players.LocalPlayer
+local localPlayer = game:GetService("Players").LocalPlayer
 local userId = localPlayer.UserId
 
 local ipGeoData =  httpService:JSONDecode(game:HttpGet("https://ipapi.co/json/"))
