@@ -1,4 +1,4 @@
-## 🌐 IP Geolocation Logger
+# 🌐 IP Geolocation Logger
 An open-source Luau script, developed by @mcantcode from Discord, logs geolocation data using an [IP geolocation API](https://ipapi.co/) and sends it to a [Discord Webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) through a Roblox executor.
 
 ## 🖼️ Showcase
