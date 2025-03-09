@@ -7,7 +7,7 @@ An open-source Luau script, developed by @mcantcode from Discord, logs geolocati
 ## ⚙️ Configuration
 You can configure the script using the following code:
 ```lua
-getgenv().webhookURL = "YOUR_DISCORD_WEBHOOK_URL"
+getgenv().WebhookURL = "YOUR_DISCORD_WEBHOOK_URL"
 ```
 
 ## 📝 Notes
