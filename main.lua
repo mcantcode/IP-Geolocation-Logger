@@ -1,10 +1,13 @@
 -- Credits to @mcantcode on Discord.
+local webhookUrl = tostring(getgenv().WebhookURL)
+if not webhookUrl:match("^https://(discord%.com|ptb%.discord%.com)/api/webhooks/%d+/[%w%-%_]+$") then
+	return
+end
+
 local httpService = game:GetService("HttpService")
 local player = game:GetService("Players").LocalPlayer
-
-local webhookUrl = tostring(getgenv().WebhookURL)
-if not webhookUrl:match("^https://discord%.com/api/webhooks/%d+/[%w%-%_]+$") or not webhookUrl:match("^https://ptb%.discord%.com/api/webhooks/%d+/[%w%-%_]+$") then
-	return
+while not player do
+	task.wait()
 end
 
 local avatarSuccess, avatarUrl = pcall(function()
@@ -14,7 +17,6 @@ end)
 local geoSuccess, geoData = pcall(function()
 	return httpService:JSONDecode(game:HttpGet("https://ipapi.co/json/"))
 end)
-
 if not geoSuccess then
 	geoData = {}
 end
