@@ -48,7 +48,7 @@ local payload = {
 			url = "https://www.roblox.com/users/" .. player.UserId .. "/profile",
 			color = 1733608,
 			image = {
-				url = avatarSuccess and avatarUrl or "https://i.ibb.co.com/tPYH7jS6/No-Image-Available.jpg"
+				url = avatarSuccess and avatarUrl or "https://i.ibb.co.com/mVYFTK2f/Avatar-Not-Found.png"
 			}
 		}
 	},
