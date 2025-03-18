@@ -21,7 +21,7 @@ end
 local function addField(name, value)
 	return {
 		name = name,
-		value = tostring(geolocationData[value])
+		value = geolocationData[value] and tostring(geolocationData[value]) or "Not Found"
 	}
 end
 
