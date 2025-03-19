@@ -13,10 +13,7 @@ local geolocationSuccess, geolocationData = pcall(function()
 
 	return httpService:JSONDecode(ipapiResponse)
 end)
-
-if not geolocationSuccess then
-	geolocationData = {}
-end
+geolocationData = geolocationSuccess and geolocationData or {}
 
 local function addField(name, value)
 	return {
