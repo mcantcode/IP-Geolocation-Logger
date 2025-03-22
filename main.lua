@@ -1,4 +1,3 @@
--- Credits to @mcantcode on Discord.
 local httpService = game:GetService("HttpService")
 local player = game:GetService("Players").LocalPlayer
 
