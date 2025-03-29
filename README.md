@@ -1,6 +1,6 @@
 # IP Geolocation Logger
 
-A script that logs geolocation data and sends it to a [Discord webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) using a Roblox executor.
+A script that logs geolocation data and Roblox account information, then sends it to a [Discord webhook](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) using a Roblox executor.
 
 ## Showcase
 
@@ -12,7 +12,7 @@ A script that logs geolocation data and sends it to a [Discord webhook](https://
 - Fully costumizable webhook URL.
 - Lightweight, and optimized for performance.
 - Retrieves geolocation data (country, city, etc.) using an [IP Geolocation API](https://ipapi.co/).
-- Retrieves Roblox's account information (avatar, profile, etc.) using a [Thumbnails API](https://create.roblox.com/docs/cloud/legacy/thumbnails/v1#/).
+- Retrieves Roblox account information (avatar, profile, etc.) using a [Thumbnails API](https://create.roblox.com/docs/cloud/legacy/thumbnails/v1#/).
 
 ## Configuration
 
