@@ -26,3 +26,7 @@ getgenv()['Webhook URL'] = "https://discord.com/api/webhooks/your-webhook-id/you
 
 - This script doesn't support any actions that violate [Roblox's Terms of Use](https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use).
 - The script runs only on a Roblox executor that fully supports UNC (Unified Naming Convention).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
