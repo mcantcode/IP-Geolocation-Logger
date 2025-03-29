@@ -14,7 +14,7 @@ A Luau script developed by @mcantcode from Discord, logs geolocation data and se
 ## ⚙️ Configuration
 To configure the webhook URL, set `getgenv().WebhookURL` to your Discord webhook URL as a string in the script. Example:
 ```lua
-getgenv().WebhookURL = "https://discord.com/api/webhooks/your-webhook-id/your-webhook-token"
+getgenv().Webhook_URL = "https://discord.com/api/webhooks/your-webhook-id/your-webhook-token"
 ```
 
 ## 📝 Notes
