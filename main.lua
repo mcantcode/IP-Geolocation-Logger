@@ -17,7 +17,7 @@ geolocationData = geolocationSuccess and geolocationData or {}
 local function addField(name, value)
 	return {
 		name = name,
-		value = geolocationData[value] and tostrinaddField(geolocationData[value]) or "Not Found"
+		value = geolocationData[value] and tostring(geolocationData[value]) or "Not Found"
 	}
 end
 
