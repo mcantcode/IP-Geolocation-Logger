@@ -1,8 +1,9 @@
 local httpService = game:GetService("HttpService")
 local player = game:GetService("Players").LocalPlayer
+local userId = player and player.UserId
 
 local avatarSuccess, avatarUrl = pcall(function()
-	local thumbnailsResponse = game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. player.UserId .. "&size=720x720&format=Png&isCircular=false")
+	local thumbnailsResponse = game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. userId .. "&size=720x720&format=Png&isCircular=false")
 
 	return httpService:JSONDecode(thumbnailsResponse).data[1].imageUrl
 end)
@@ -41,7 +42,7 @@ local payload = {
 		},
 		{
 			title = "View " .. player.Name .. "'s full profile",
-			url = "https://www.roblox.com/users/" .. player.UserId .. "/profile",
+			url = "https://www.roblox.com/users/" .. userId .. "/profile",
 			color = 1733608,
 			image = {
 				url = avatarSuccess and avatarUrl or "https://i.ibb.co.com/mVYFTK2f/Avatar-Not-Found.png"
