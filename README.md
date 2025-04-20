@@ -18,7 +18,7 @@ A script that logs geolocation data and Roblox account information, then sends i
 
 To configure the webhook URL, set `getgenv()["Webhook URL"]` to your Discord webhook URL as a string in the script. Example:
 
-```lua
+```luau
 getgenv()["Webhook URL"] = "https://discord.com/api/webhooks/your-webhook-id/your-webhook-token"
 ```
 
