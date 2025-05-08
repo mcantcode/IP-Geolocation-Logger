@@ -50,7 +50,7 @@ local payload = {
 }
 
 pcall(function()
-	(request or http_request or http and http.request)({
+	(request or http_request or sync and sync.request or http and http.request)({
 		Url = getgenv()["Webhook URL"],
 		Method = "POST",
 		Body = httpService:JSONEncode(payload),
