@@ -4,7 +4,7 @@ A script that logs geolocation data and Roblox account information, then sends i
 
 ## Showcase
 
-![](https://i.ibb.co.com/bgQgW6Tv/IP-Geolocation-Logger-Showcase.jpg)
+![](showcase.jpg)
 
 ## Features
 
@@ -14,13 +14,15 @@ A script that logs geolocation data and Roblox account information, then sends i
 - Retrieves geolocation data (country, city, etc.) using an [IP Geolocation API](https://ipapi.co/).
 - Retrieves Roblox account information (avatar, profile, etc.) using a [Thumbnails API](https://create.roblox.com/docs/cloud/legacy/thumbnails/v1#/).
 
-## Configuration
+## Usage
 
-To configure the webhook URL, set `getgenv()["Webhook URL"]` to your Discord webhook URL as a string in the script. Example:
+Before using IP Geolocation Logger, make sure to configure it by setting `getgenv()["Webhook URL"]` to your Discord webhook URL as a string in the script. Example:
 
 ```luau
 getgenv()["Webhook URL"] = "https://discord.com/api/webhooks/your-webhook-id/your-webhook-token"
 ```
+
+After configuring, you can directly run [loader.luau](loader.luau).
 
 ## Notes
 
