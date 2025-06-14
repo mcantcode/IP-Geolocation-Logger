@@ -22,7 +22,7 @@ Before using IP Geolocation Logger, make sure to configure it by setting `getgen
 getgenv()["Webhook URL"] = "https://discord.com/api/webhooks/your-webhook-id/your-webhook-token"
 ```
 
-After configuring, you can directly run [loader.luau](loader.luau).
+After configuring, you can directly run [`loader.luau`](loader.luau).
 
 ## Notes
 
@@ -31,4 +31,4 @@ After configuring, you can directly run [loader.luau](loader.luau).
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) file for more details.
