@@ -16,7 +16,7 @@ Before using IP Geolocation Logger, make sure to configure it by setting `getgen
 ```luau
 getgenv()["Webhook URL"] = "https://discord.com/api/webhooks/your-webhook-id/your-webhook-token"
 ```
-After configuring, you can directly run [`loader.luau`](loader.luau).
+After configuring, you can directly use IP Geolocation Logger by running [`loader.luau`](loader.luau) in your Roblox executor.
 
 ## Notes
 - This script doesn't support any actions that violate [Roblox's Terms of Use](https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use).
